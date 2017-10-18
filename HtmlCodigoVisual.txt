@@ -1,0 +1,21 @@
+<html>
+<Head>
+<Title>Laboratorio3</Title>
+
+</Head>
+<Body>
+    <label for="Name">Ingrese su Nombre</label>
+    <br>
+    <input type="text" value=" " id="texto" /> 
+    <hr>
+    <label for="Pin">Ingrese su Pin</label>
+    <br>
+    <input type="text" value=" " id="texto2" /> 
+    <hr>
+    <button type="button" class="btn btn-Guardar">Guardar</button>
+    <br>
+    <button type="button" class="btn btn-Xml">Xml</button>
+    <br>
+    <button type="button" class="btn btn-Json">Json</button>
+</Body>
+</html>

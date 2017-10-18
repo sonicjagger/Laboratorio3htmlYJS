@@ -22,23 +22,22 @@ function myFunction2()
 }
 function myFunction3()
 {
-var parser, xmlDoc;
-var text1 = { "name":document.getElementById("texto").value, "password":document.getElementById("texto2").value};
-parser = new DOMParser();
-xmlDoc = parser.parseFromString(text1,"text/xml");
-var xmlString = new XMLSerializer().serializeToString(xmlDoc);
-document.getElementById("txta").innerHTML = xmlString;
+var xmlDoc;
+var text1 = "<name>"+document.getElementById("texto").value+"</name>"
+var text2 = "<password>"+document.getElementById("texto2").value+"</password>"
+document.getElementById("txta").innerHTML = text1 + "\n"+text2;
+
 }
 </Script>
 </Head>
 <Body>
     <label for="Name">Ingrese su Nombre</label>
     <br>
-    <input type="text" value=" " id="texto" /> 
+    <input type="text" value="" id="texto" /> 
     <hr>
     <label for="Pin">Ingrese su Pin</label>
     <br>
-    <input type="password" value=" " id="texto2" /> 
+    <input type="password" value="" id="texto2" /> 
     <hr>
     <button onclick="myFunction()" type="button" class="btn btn-Guardar">Guardar</button>
     <br>

@@ -1,6 +1,35 @@
+
 <html>
 <Head>
 <Title>Laboratorio3</Title>
+<Script type= "text/javascript">
+function myFunction()
+{
+	if(document.getElementById("texto").value == " " || document.getElementById("texto2").value == " ")
+	{
+		alert("Ingrese valores validos");
+	}
+	else
+	{
+		var usuario = { "name":document.getElementById("texto").value, "password":document.getElementById("texto2").value};
+	}
+}
+function myFunction2()
+{
+	var usuario = { "name":document.getElementById("texto").value, "password":document.getElementById("texto2").value};
+	var Jobj = JSON.stringify(usuario);
+	document.getElementById("resultado").innerHTML = Jobj;
+}
+function myFunction3()
+{
+var parser, xmlDoc;
+var text1 = { "name":document.getElementById("texto").value, "password":document.getElementById("texto2").value};
+parser = new DOMParser();
+xmlDoc = parser.parseFromString(text1,"text/xml");
+var xmlString = new XMLSerializer().serializeToString(xmlDoc);
+document.getElementById("txta").innerHTML = xmlString;
+}
+</Script>
 </Head>
 <Body>
     <label for="Name">Ingrese su Nombre</label>
@@ -9,12 +38,21 @@
     <hr>
     <label for="Pin">Ingrese su Pin</label>
     <br>
-    <input type="text" value=" " id="texto2" /> 
+    <input type="password" value=" " id="texto2" /> 
     <hr>
-    <button type="button" class="btn btn-Guardar">Guardar</button>
+    <button onclick="myFunction()" type="button" class="btn btn-Guardar">Guardar</button>
     <br>
-    <button type="button" class="btn btn-Xml">Xml</button>
+    <button type="button" onclick="myFunction3()" class="btn btn-Xml">Xml</button>
     <br>
-    <button type="button" class="btn btn-Json">Json</button>
+    <button type="button" onclick="myFunction2()" class="btn btn-Json">Json</button>
+	<br>
+	<br>
+	<hr>
+	<textarea id= "txta" rows="4" cols="50">
+	xmlString
+	</textarea>
+	<p id="resultado">resultado</p>
+    <br>
 </Body>
 </html>
+
